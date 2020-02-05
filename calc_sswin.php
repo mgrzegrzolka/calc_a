@@ -217,6 +217,14 @@ border-bottom: 1px solid
 rgba(0, 0, 0, 0.05);
 padding-bottom: 20px;
 }
+
+.panelp{		
+	background-color: #fff0 !important;
+	border-color:#555 !important;
+)
+.table > thead > tr > th{
+border-bottom: 30px solid #ddd !important;
+}
 </style>
 <script type="text/javascript" src="http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/js2/scriptsswin.js"></script>
 <?php 
@@ -480,23 +488,29 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 					
 </div>
 
-				</div><!-- .container -->
-				<section class="about-us " id="aboutus">
+</div><!-- .container -->
+<section class="about-us " id="aboutus">
 	
-	<div class="container">
+<div class="container">
 
 		<!-- SECTION HEADER -->
 
-		<div class="section-header">
-
-			
-		</div><!-- / END SECTION HEADER -->
+	<div class="section-header">
+		<h2 class="white-text">Podsumowanie</h2>
+		<div class="white-text section-legend">Bezprzewodowy system <span style="color:red;">alarmowy</span> z aplikacją mobilną. </div>
+		<div class="white-text section-legend" style="font-size: 50px; color: #ffd83f;border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 50px;">Cena brutto: <b style="font-size: 60px !important;">2350 zł </b></div>
+	</div><!-- / END SECTION HEADER -->
 
 		<!-- 3 COLUMNS OF ABOUT US-->
 
-		<div class="row">
-
-			<!-- COLUMN 1 - BIG MESSAGE ABOUT THE COMPANY-->
+	<div class="row">
+	<div class="panel panel-default panelp" > 
+		<div class="panel-heading" style="color:white;background-color: #171717;border-color:#393939">Panel heading</div> 
+		<table class="table table_list_sswin" style="color: white;"> 
+		<thead> 
+		<tr> 
+		<th >#</th> <th>First Name</th> <th>Last Name</th> <th>Username</th> </tr> </thead> <tbody> <tr> <th scope="row">1</th> <td>Mark</td> <td>Otto</td> <td>@mdo</td> </tr> <tr> <th scope="row">2</th> <td>Jacob</td> <td>Thornton</td> <td>@fat</td> </tr> <tr> <th scope="row">3</th> <td>Larry</td> <td>the Bird</td> <td>@twitter</td> </tr> </tbody> </table> </div>
+			
 
 		
 	</div> <!-- / END 3 COLUMNS OF ABOUT US-->
@@ -507,7 +521,6 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 
 	
 </section>
-<section class="separator-one" id="ribbon_bottom"><div class="color-overlay"><h3 class="container text" data-scrollreveal="enter left after 0s over 1s" data-sr-init="true" data-sr-complete="true">Change this text in BottomButton Ribbon</h3></div></section>
 			</div>
 			<?php
 	
