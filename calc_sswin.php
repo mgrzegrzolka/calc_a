@@ -483,20 +483,24 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 				</div><!-- .container -->
 				<section class="about-us " id="aboutus">
 	
-	<div class="container">
+					<div class="container">
 
 		<!-- SECTION HEADER -->
 
-		<div class="section-header">
+					<div class="section-header">
+						<h2 class="white-text">Podsumowanie</h2>
+						<div class="white-text section-legend">Bezprzewodowy system <span style="color:red;">alarmowy</span> z aplikacją mobilną. </div>
+						<div class="white-text section-legend border-bottom: 1px solid
+rgba(255, 255, 255, 0.05);
 
-			
-		</div><!-- / END SECTION HEADER -->
+padding-bottom: 50px;" style="font-size: 50px; color: #ffd83f;">Cena brutto: <b style="font-size: 60px !important;">2350 zł </b></div>
+					</div><!-- / END SECTION HEADER -->
 
 		<!-- 3 COLUMNS OF ABOUT US-->
 
 		<div class="row">
 
-			<!-- COLUMN 1 - BIG MESSAGE ABOUT THE COMPANY-->
+			
 
 		
 	</div> <!-- / END 3 COLUMNS OF ABOUT US-->
@@ -507,7 +511,6 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 
 	
 </section>
-<section class="separator-one" id="ribbon_bottom"><div class="color-overlay"><h3 class="container text" data-scrollreveal="enter left after 0s over 1s" data-sr-init="true" data-sr-complete="true">Change this text in BottomButton Ribbon</h3></div></section>
 			</div>
 			<?php
 	
