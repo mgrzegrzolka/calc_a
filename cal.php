@@ -35,10 +35,16 @@ $val_siren = (int)$el_siren * 	140;
 $val_panic = (int)$el_panic * 	50;
 $val_pirout = (int)$el_pirout * 390;
 
+$sum_el=$el_keypad+$el_pir+$el_openk+$el_gas+$el_smoke+$el_glass+$el_siren+$el_panic+$el_pirout;
 
 $val_sum= ($val_catral + $val_keypad + $val_pir + $val_openk + $val_gas + $val_smoke + $val_glass + $val_siren + 
 $val_panic + $val_pirout) * $vat;
 
-echo number_format($val_sum,2,',','')." zł brutto"
 
+if($sum_el==0){
+	
+	echo "0 zł brutto";
+}else{
+	echo number_format($val_sum,2,',','')." zł brutto";
+}
 ?>

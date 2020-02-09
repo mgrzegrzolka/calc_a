@@ -1,4 +1,5 @@
 <link rel="stylesheet" id="zerif_font_all-css" href="http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/calc.css" type="text/css" >
+<link rel="stylesheet" id="zerif_font_all-css" href="http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/css/bootstrap.css" type="text/css" >
 <script type="text/javascript" src="http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/js2/scriptsswin.js"></script>
 <?php 
 /*
@@ -35,9 +36,11 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 			</header> <!-- / END HOME SECTION  -->
 			<?php zerif_after_header_trigger(); ?>
 			
-			<div id="content" class="site-content blog-site-content">
-
+			<div id="content" class="site-content blog-site-content" style="background:none;">
+			<section class="contact-us " id="contact" style="background-color: white !important; padding-top: 0px;padding-bottom: 0px;">
+			<div class="container">
 				<div class="container bb" style="">
+				
 				<div class="content-left-wrap col-md-12">
 
 						<div id="primary" class="content-area">
@@ -262,61 +265,71 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 </div>
 
 </div><!-- .container -->
-<section class="about-us " id="aboutus">
+</div> 
+
+</section>
+<section class="about-us " id="summary">
 	
-<div class="container">
+<div class="container" id="summary_cont">
 
-		<!-- SECTION HEADER -->
-
-	<div class="section-header">
+	<div class="section-header" style="padding-bottom: 50px;">
 		<h2 class="white-text">Podsumowanie</h2>
-		<div class="white-text section-legend">Bezprzewodowy system <span style="color:red;">alarmowy</span> z aplikacją mobilną. </div>
-		<div class="white-text section-legend" style="font-size: 50px; color: #ffd83f;border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 50px;">Cena brutto: <b style="font-size: 60px !important;">2350 zł </b></div>
-	</div><!-- / END SECTION HEADER -->
-
-		<!-- 3 COLUMNS OF ABOUT US-->
-
-	<div class="row">
-	<div class="panel panel-default panelp" > 
-		<div class="panel-heading" style="color:white;background-color: #171717;border-color:#393939">Panel heading</div> 
-		<table class="table_list_sswin" style="color: white;margin-bottom: 0px !important;"> 
-			<tbody>
-				<tr> 
-					<th class="th_n">#</th> 
-					<th>First Name</th> 
-					<th>Last Name</th> 
-					<th>Username</th> </tr> 
-				<tr> 
-					<th scope="row">1</th> 
-					<td>Mark</td> 
-					<td>Otto</td> 
-					<td>@mdo</td> 
-				</tr> 
-				<tr> 
-					<th scope="row">2</th> 
-					<td>Jacob</td> 
-					<td>Thornton</td> 
-					<td>@fat</td> </tr> 
-				<tr> 
-					<th scope="row">3</th> 
-					<td>Larry</td> <td>the Bird</td> 
-					<td>@twitter</td> 
-				</tr> 
-			</tbody> 
-		</table> 
-		</div>
-			
-
-		
-	</div> <!-- / END 3 COLUMNS OF ABOUT US-->
-
-	<!-- CLIENTS -->
+		<div class="white-text section-legend">Skonfiguruj swój system <span style="color:red;">alarmowy</span>.</div>
+		<div class="white-text section-legend" style="font-size: 50px; color: #ffd83f; padding-bottom: 50px;">Cena brutto: <b style="font-size: 60px !important;">0 zł </b></div>
+	</div>
 	
-	</div> <!-- / END CONTAINER -->
+</div>
 
 	
 </section>
+<section class="contact-us " id="contact" style="background: rgba(255, 255, 255, 0.84);">
+	<div class="container">
+	
+			<div class="section-header">
+				<h2 class="dark-text">Wypęłnij formularz kontaktowy</h2>
+				<div class="section-legend" style="color: #5d5d5e;">Wysłanie wstępnej konfiguracji jest darmowe i nie oznacza zamówienia usługi, pozwoli jedynie na przygotowanie kompletnej oferty.</div>
+			
 			</div>
+		
+<form role="form">
+	<div class="row" style="margin-bottom: 10px;">
+		<div class="col-md-6">
+			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Imię</label>-->
+			<input type="text" class="form-control23" id="exampleInputEmail1" placeholder="Imię" style="">
+		</div>
+		<div class="col-md-6">
+			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Miejscowość lub kod pocztowy</label>-->
+			<input type="text" class="form-control23" id="exampleInputEmail1" placeholder="Miejscowość" style="">
+		</div>
+	</div>
+	<div class="row" style="margin-bottom: 10px;">
+		
+		
+		<div class="col-md-6">
+			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Email</label>-->
+			<input type="email" class="form-control23" id="exampleInputEmail1" placeholder="Adres emailowy" style="">
+		</div>
+		<div class="col-md-6">
+			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Telefon</label>-->
+			<input type="phone" class="form-control23" id="exampleInputEmail1" placeholder="Numer telefonu" style="">
+		</div>
+  </div>
+   <div class="row" style="margin-top: 18px;">
+		<div class="col-md-1">
+			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+		</div>
+		<div class="col-md-11">
+			<label class="form-check-label" for="exampleCheck1" style="text-align: left;"><small id="emailHelp" class="form-text text-muted" style="color: #575757;">Wyrażam zgodę na przetwarzanie moich danych osobowych w postaci imienia, nazwiska, firmy, nr telefonu kontaktowego dla potrzeb prowadzenia marketingu bezpośredniego z wykorzystaniem połączeń telefonicznych przez Konsalnet Holding S.A. zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016r.</small></label>
+		</div>
+  </div>
+ 
+  <button type="submit" class="btn22">Wyślij konfigurację</button>
+</form>
+
+	</div> 
+
+</section>
+</div>
 			<?php
 	
 

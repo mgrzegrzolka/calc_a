@@ -59,6 +59,7 @@ jQuery.ajax({
         beforeSend: function() {
             jQuery('#suma1').html('<div class="loader"></div>');
 			
+			
         }
        
         
@@ -67,10 +68,41 @@ jQuery.ajax({
 		jQuery('#suma1').html(json);
     
      });	
-	
-	
+jQuery.ajax({
+        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/calc_sswin_summary.php',
+        type: 'POST',
+              
+        data: {el_keypad:el_keypad,
+			   el_pir   :el_pir,
+			   el_openk :el_openk ,
+			   el_gas   :el_gas   ,
+			   el_smoke	:el_smoke ,
+			   el_glass :el_glass ,
+			   el_siren :el_siren ,
+			   el_panic :el_panic ,
+			   el_pirout:el_pirout,
+			   f_bezprz :feature12,
+			   f_app	:feature3 ,
+			   vat		:vat
+   
+        },
+        dataType:"html",
+        
+        beforeSend: function() {
+       
+			jQuery('#summary_cont').html("<div class=\"section-header\" style=\"padding-bottom: 100px;\"><div class=\"loader2\"></div></div>");
+			
+        }
+       
+        
+    }).done(function(json){
+        
+		jQuery('#summary_cont').html(json);
+		console.log(json);
+ });	
 
 }
+
 
 
 	

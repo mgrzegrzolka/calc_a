@@ -204,6 +204,16 @@ padding:10px 5px 10px 5px;
   margin-left: auto;
 margin-right: auto;
 }
+.loader2 {
+  border: 15px solid #f3f3f3; /* Light grey */
+  border-top: 15px solid #007bff; /* Blue */
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  animation: spin 0.4s linear infinite;
+  margin-left: auto;
+margin-right: auto;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }
@@ -233,7 +243,7 @@ line-height: 2;
 	
 }
 .table_list_sswin > tbody > tr > th{
-padding: 8px !important;
+padding: 8px 8px 8px 8px !important;
 line-height: 1.42857143;
 vertical-align: top;
 font-weight: bold;
@@ -245,8 +255,4 @@ padding: 8px !important;
 line-height: 1.42857143;
 vertical-align: top;
 border-top: 1px solid #ddd;
-}
-table{
-margin-bottom: 0px !important;	
-
 }
