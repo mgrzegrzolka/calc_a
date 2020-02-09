@@ -11,6 +11,7 @@ $el_panic = $_POST['el_panic'];
 $el_pirout = $_POST['el_pirout'];
 $vat = (int)$_POST['vat'];
 $app = (int)$_POST['f_app'];
+$bezprz = (int)$_POST['f_bezprz'];
 
 if($vat==8){
 	$vat=1.08 ;
@@ -61,8 +62,30 @@ if($sum_el==0){
 
 	<div class="section-header" style="padding-bottom: 50px;">
 		<h2 class="white-text">Podsumowanie</h2>
-		<div class="white-text section-legend">Bezprzewodowy system <span style="color:red;">alarmowy</span> z aplikacją mobilną. </div>
-		<div class="white-text section-legend" style="font-size: 50px; color: #ffd83f;border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 50px;">Cena brutto: <b style="font-size: 60px !important;">2350 zł </b></div>
+		
+		<div class="white-text section-legend">
+		<?php 
+		if($bezprz==2){
+			echo '<span style="color:#007bff;">Przewodowy</span>';
+		}
+		if($bezprz==1){
+			echo '<span style="color:#5cb85c;">Bezprzewodowy</span>';
+		}
+		?>
+		 system 
+		<span style="color:red;">alarmowy</span>
+		<?php 
+		if($app==1){
+			echo '<span >z aplikacją mobilną.</span>';
+		}else{
+			echo '<span >.</span>';
+		
+		}
+		
+		?>
+		</div>
+		
+		<div class="white-text section-legend" style="font-size: 50px; color: #ffd83f;border-bottom: 1px solid rgba(255, 255, 255, 0.05); padding-bottom: 50px;">Cena brutto: <b style="font-size: 60px !important;"><?php echo number_format($val_sum,2,',','')." zł"; ?></b></div>
 	</div><!-- / END SECTION HEADER -->
 
 		<!-- 3 COLUMNS OF ABOUT US-->
