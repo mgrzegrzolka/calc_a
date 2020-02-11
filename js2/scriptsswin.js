@@ -1,3 +1,75 @@
+function sendFormCalc(){
+		
+		var el_keypad = jQuery('#el_keypad').text();
+		var el_pir    = jQuery('#el_pir').text();
+		var el_openk  = jQuery('#el_openk').text();
+		var el_gas    = jQuery('#el_gas').text();
+		var el_smoke	  = jQuery('#el_smoke').text();
+		var el_glass  = jQuery('#el_glass').text();
+		var el_siren  = jQuery('#el_siren').text();
+		var el_panic  = jQuery('#el_panic').text();
+		var el_pirout = jQuery('#el_pirout').text();
+		
+		var feature12 = 0;
+		
+		var feature3 = 0;
+		
+		if(document.getElementById('feature1').className=="butlinesPick"){
+			feature12 = 1;
+		}
+		if(document.getElementById('feature2').className=="butlinesPick"){
+			feature12 = 2;
+		}
+		if(document.getElementById('feature3').className=="butlinesPick"){
+			feature3 = 1;
+		}
+		
+		
+		var vat = 0;
+		
+		if(document.getElementById('vat8').className=="butlines2Pick"){
+			vat=8;
+		}
+		if(document.getElementById('vat23').className=="butlines2Pick"){
+			vat=23;
+		}
+		
+		jQuery.ajax({
+        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/cal_send_form.php',
+        type: 'POST',
+              
+        data: {el_keypad:el_keypad,
+			   el_pir   :el_pir,
+			   el_openk :el_openk ,
+			   el_gas   :el_gas   ,
+			   el_smoke	:el_smoke ,
+			   el_glass :el_glass ,
+			   el_siren :el_siren ,
+			   el_panic :el_panic ,
+			   el_pirout:el_pirout,
+			   f_bezprz :feature12,
+			   f_app	:feature3 ,
+			   vat		:vat
+   
+        },
+        dataType:"html",
+        
+        beforeSend: function() {
+            jQuery('#suma1').html('<div class="loader"></div>');
+			
+			
+        }
+       
+        
+		}).done(function(json){
+        
+		
+    
+		});	
+	
+
+}
+
 
 
 function calsum(){
@@ -35,7 +107,7 @@ if(document.getElementById('vat8').className=="butlines2Pick"){
 if(document.getElementById('vat23').className=="butlines2Pick"){
 	vat=23;
 }
-console.log(jQuery('#vat23'));
+
 jQuery.ajax({
         url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/cal.php',
         type: 'POST',
