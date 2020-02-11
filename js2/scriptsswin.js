@@ -35,7 +35,7 @@ function sendFormCalc(){
 		}
 		
 		jQuery.ajax({
-        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/cal_send_form.php',
+        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/calc_send_form.php',
         type: 'POST',
               
         data: {el_keypad:el_keypad,
@@ -55,15 +55,16 @@ function sendFormCalc(){
         dataType:"html",
         
         beforeSend: function() {
-            jQuery('#suma1').html('<div class="loader"></div>');
 			
+            //jQuery('#suma1').html('<div class="loader"></div>');
+			alert('before');
 			
         }
        
         
 		}).done(function(json){
         
-		
+			alert('before222');
     
 		});	
 	
