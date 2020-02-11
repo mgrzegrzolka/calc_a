@@ -4,11 +4,17 @@ function sendFormCalc(){
 		var el_pir    = jQuery('#el_pir').text();
 		var el_openk  = jQuery('#el_openk').text();
 		var el_gas    = jQuery('#el_gas').text();
-		var el_smoke	  = jQuery('#el_smoke').text();
+		var el_smoke  = jQuery('#el_smoke').text();
 		var el_glass  = jQuery('#el_glass').text();
 		var el_siren  = jQuery('#el_siren').text();
 		var el_panic  = jQuery('#el_panic').text();
 		var el_pirout = jQuery('#el_pirout').text();
+		
+		var emailclient 	= jQuery('#emailclient').val();
+		var phonenumber 	= jQuery('#phonenumber').val();
+		var clientname  	= jQuery('#clientname').val();
+		var localisation 	= jQuery('#localisation').val();
+		var agre1 			= jQuery('#agre1').val();
 		
 		var feature12 = 0;
 		
@@ -35,35 +41,40 @@ function sendFormCalc(){
 		}
 		
 		jQuery.ajax({
-        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/cal_send_form.php',
+        url:'http://mkumosz2.vot.pl/wp-content/themes/zerif-lite/calc_send_form.php',
         type: 'POST',
               
-        data: {el_keypad:el_keypad,
-			   el_pir   :el_pir,
-			   el_openk :el_openk ,
-			   el_gas   :el_gas   ,
-			   el_smoke	:el_smoke ,
-			   el_glass :el_glass ,
-			   el_siren :el_siren ,
-			   el_panic :el_panic ,
-			   el_pirout:el_pirout,
-			   f_bezprz :feature12,
-			   f_app	:feature3 ,
-			   vat		:vat
+        data: {el_keypad		:el_keypad,
+			   el_pir   		:el_pir,
+			   el_openk 		:el_openk ,
+			   el_gas   		:el_gas   ,
+			   el_smoke			:el_smoke ,
+			   el_glass 		:el_glass ,
+			   el_siren 		:el_siren ,
+			   el_panic 		:el_panic ,
+			   el_pirout		:el_pirout,
+			   f_bezprz 		:feature12,
+			   f_app			:feature3 ,
+			   vat				:vat,
+			   emailclient		:emailclient,
+			   clientname		:clientname,
+			   phonenumber		:phonenumber,
+			   localisation		:localisation
    
         },
         dataType:"html",
         
         beforeSend: function() {
-            jQuery('#suma1').html('<div class="loader"></div>');
 			
+            //jQuery('#suma1').html('<div class="loader"></div>');
+			alert('before');
 			
         }
        
         
 		}).done(function(json){
         
-		
+			alert(json);
     
 		});	
 	
