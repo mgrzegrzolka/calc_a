@@ -291,7 +291,9 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 			
 			</div>
 		
+
 <div>
+
 	<div class="row" >
 		<div class="col-md-6" style="margin-bottom: 10px;">
 			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Imię</label>-->
@@ -324,7 +326,10 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
   </div>
  
   <button onclick="sendFormCalc()" class="btn22" >Wyślij konfigurację</button>
+
 </div>
+
+
 
 	</div> 
 
@@ -335,4 +340,4 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 
 
 get_footer(); ?>
-
+<div class="bg_mail_load"><div class="loader3"></div><div><p style="color:white;margin-top: 1%;font-size: 20px;">Proszę czekać...<br/><span style="font-size:14px;color:#96c9ff">Twoja konfiguracja już prawie do nas dotarła.</span></p></div></div>

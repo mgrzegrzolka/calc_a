@@ -66,15 +66,16 @@ function sendFormCalc(){
         
         beforeSend: function() {
 			
-            //jQuery('#suma1').html('<div class="loader"></div>');
-			alert('before');
+            jQuery('.bg_mail_load').css('display','block');
+			//alert('before');
 			
         }
        
         
 		}).done(function(json){
-        
-			alert(json);
+			jQuery('.bg_mail_load').css('display','none');
+			console.log(json);
+
     
 		});	
 	
