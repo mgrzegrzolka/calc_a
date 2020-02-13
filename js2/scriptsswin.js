@@ -75,6 +75,7 @@ function sendFormCalc(){
 		}).done(function(json){
         
 			alert(json);
+
     
 		});	
 	

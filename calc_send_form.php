@@ -1,4 +1,5 @@
 <?php
+<<<<<<< HEAD
 $el_keypad = $_POST['el_keypad'];
 $el_pir = $_POST['el_pir'];
 $el_openk = $_POST['el_openk'];
@@ -10,19 +11,14 @@ $el_panic = $_POST['el_panic'];
 $el_pirout = $_POST['el_pirout'];
 $vat = (int)$_POST['vat'];
 $app = (int)$_POST['f_app'];
+=======
 
-if($vat==8){
-	$vat=1.08 ;
-}else{
-	$vat=1.23;
-}
+>>>>>>> 24003ec374c8cda361ed3b798e21e98f0dcc4a5d
 
-if($app == 1){
-	$val_catral = 1200;
-}else{
-	$val_catral = 800;
-}
 
+echo 'dziala send';
+
+<<<<<<< HEAD
 $emailclient 	= $_POST['emailclient'];
 $phonenumber 	= $_POST['phonenumber'];
 $clientname 	= $_POST['clientname'];
