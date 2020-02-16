@@ -340,4 +340,18 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 
 
 get_footer(); ?>
-<div class="bg_mail_load"><div class="loader3"></div><div><p style="color:white;margin-top: 1%;font-size: 20px;">Proszę czekać...<br/><span style="font-size:14px;color:#96c9ff">Twoja konfiguracja już prawie do nas dotarła.</span></p></div></div>
+<div class="bg_mail_load">
+	<div class="contener_loading_send">
+		<div class="cont_loader3">
+			<div class="loader3"></div>
+			<div>
+				<p style="color:white;margin-top: 1%;font-size: 20px;">Proszę czekać...<br/><span style="font-size:14px;color:#96c9ff">Twoja konfiguracja już prawie do nas dotarła.</span>
+				</p>
+			</div>
+		</div>
+		<div class="info_after_send">
+			<p style="font-size: 30px;margin-bottom: 0.9em;">Konfiguracja zostałą przesłana prawidłowo.<br><span style="font-size:14px;color:#96c9ff">W ciągu tygodnia ...</span></p>
+			<button onclick="cont1()" class="btn23" >kontynuuj</button>
+		</div>
+	</div>
+</div>

@@ -215,7 +215,7 @@ margin-right: auto;
 margin-right: auto;
 }
 .loader3 {
-  margin-top:35%;
+  
   border: 15px solid #f3f3f3; /* Light grey */
   border-top: 15px solid #007bff; /* Blue */
   border-radius: 50%;
@@ -226,6 +226,15 @@ margin-right: auto;
 margin-right: auto;
 
 }
+.contener_loading_send{
+	margin-top: 45rem;
+	
+}
+.info_after_send{
+	color:white;
+	display:none;
+}
+
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

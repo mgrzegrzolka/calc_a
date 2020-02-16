@@ -1,3 +1,10 @@
+function cont1(){
+	 jQuery('.bg_mail_load').css('display','none');
+	jQuery('.cont_loader3').css('display','block');
+	jQuery('.info_after_send').css('display','none');
+	
+}
+
 function sendFormCalc(){
 		
 		var el_keypad = jQuery('#el_keypad').text();
@@ -73,7 +80,8 @@ function sendFormCalc(){
        
         
 		}).done(function(json){
-			jQuery('.bg_mail_load').css('display','none');
+			jQuery('.cont_loader3').css('display','none');
+			jQuery('.info_after_send').css('display','block');
 			console.log(json);
 
     
