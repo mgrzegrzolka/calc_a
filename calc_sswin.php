@@ -293,7 +293,7 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 		
 
 <div>
-
+<div class="alert alert-warning warning-email" style="display:none;"><strong>Uwaga!</strong> Wprowadziłeś błędny adres email.</div>
 	<div class="row" >
 		<div class="col-md-6" style="margin-bottom: 10px;">
 			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Imię</label>-->
@@ -351,6 +351,10 @@ get_footer(); ?>
 		</div>
 		<div class="info_after_send">
 			<p style="font-size: 30px;margin-bottom: 0.9em;">Konfiguracja zostałą przesłana prawidłowo.<br><span style="font-size:14px;color:#96c9ff">W ciągu tygodnia ...</span></p>
+			<button onclick="cont1()" class="btn23" >kontynuuj</button>
+		</div>
+		<div class="info_alert">
+			<p style="font-size: 30px;margin-bottom: 0.9em;">Ups... Coś poszło nie tak.<br><span style="font-size:16px;color:white;">Konfiguracja nie została wysłana.<br/>Odśwież stronę i spróbuj jeszcze raz .</span></p>
 			<button onclick="cont1()" class="btn23" >kontynuuj</button>
 		</div>
 	</div>

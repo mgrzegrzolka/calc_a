@@ -234,7 +234,10 @@ margin-right: auto;
 	color:white;
 	display:none;
 }
-
+.info_alert{
+	color:white;
+	display:none;
+}
 
 @keyframes spin {
   0% { transform: rotate(0deg); }

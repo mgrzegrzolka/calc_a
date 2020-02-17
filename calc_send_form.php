@@ -56,7 +56,7 @@ if (file_exists(dirname(__FILE__).'/tcpdf/examples/files/' . $fileName)) {
         if (!empty($email_11)) {
 			
             //$status = sendReceiptEmail($fileName, $email_11);
-			echo 1;
+			echo 2;
             return $status;   
         } else {
 			

@@ -1,7 +1,47 @@
+window.onload = function() {
+	jQuery('#phonenumber').keypress(function(){
+
+		check_form_email();
+
+	});
+	
+	jQuery('#phonenumber').focusout(function(){
+
+		check_form_email();
+
+	})
+	jQuery('#emailclient').keypress(function(){
+
+		if(check_form_email(jQuery(this).val())){
+		
+		
+		}
+
+	});
+	
+	jQuery('#emailclient').focusout(function(){
+
+		if((!check_form_email(jQuery(this).val())) && (jQuery(this).val().length>0)){
+			jQuery('.warning-email').css('display','block');
+		}else{
+			jQuery('.warning-email').css('display','none');
+		}
+
+	})
+};
+
+
 function cont1(){
-	 jQuery('.bg_mail_load').css('display','none');
+	jQuery('.bg_mail_load').css('display','none');
 	jQuery('.cont_loader3').css('display','block');
 	jQuery('.info_after_send').css('display','none');
+	jQuery('.info_alert').css('display','none');
+	
+}
+function check_form_email(email){
+	
+	 var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
 	
 }
 
@@ -80,8 +120,13 @@ function sendFormCalc(){
        
         
 		}).done(function(json){
-			jQuery('.cont_loader3').css('display','none');
-			jQuery('.info_after_send').css('display','block');
+			if(json=="1"){
+				jQuery('.cont_loader3').css('display','none');
+				jQuery('.info_after_send').css('display','block');
+			}else{
+				jQuery('.cont_loader3').css('display','none');
+				jQuery('.info_alert').css('display','block');
+			}
 			console.log(json);
 
     
