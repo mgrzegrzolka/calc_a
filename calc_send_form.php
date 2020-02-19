@@ -1,63 +1,31 @@
 <?php
-
+require 'calc_init.php';
+require 'email_permissions.php';
+$confromcust = array("emailclient"=>$emailclient,"phonenumber"=>$phonenumber,"clientname"=>$clientname,"localisation"=>$localisation,"val_sum"=>$val_sum);
 //include phpmail
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-$el_keypad = $_POST['el_keypad'];
-$el_pir = $_POST['el_pir'];
-$el_openk = $_POST['el_openk'];
-$el_gas = $_POST['el_gas'];
-$el_smoke = $_POST['el_smoke'];
-$el_glass = $_POST['el_glass'];
-$el_siren = $_POST['el_siren'];
-$el_panic = $_POST['el_panic'];
-$el_pirout = $_POST['el_pirout'];
-$vat = (int)$_POST['vat'];
-$app = (int)$_POST['f_app'];
-
-
-$emailclient 	= $_POST['emailclient'];
-$phonenumber 	= $_POST['phonenumber'];
-$clientname 	= $_POST['clientname'];
-$localisation 	= $_POST['localisation'];
-$agre1			= $_POST['agre1'];
-
-
-$val_keypad = (int)$el_keypad * 350;
-$val_pir = (int)$el_pir * 		55;
-$val_openk = (int)$el_openk *   30;
-$val_gas = (int)$el_gas * 		200;
-$val_smoke = (int)$el_smoke * 	180;
-$val_glass = (int)$el_glass * 	130;
-$val_siren = (int)$el_siren * 	140;
-$val_panic = (int)$el_panic * 	50;
-$val_pirout = (int)$el_pirout * 390;
-
-$sum_el=$el_keypad+$el_pir+$el_openk+$el_gas+$el_smoke+$el_glass+$el_siren+$el_panic+$el_pirout;
-
-$val_sum= ($val_catral + $val_keypad + $val_pir + $val_openk + $val_gas + $val_smoke + $val_glass + $val_siren + 
-$val_panic + $val_pirout) * $vat;
 
 
 include 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
 
-require 'calc_init.php';
+
 
 require 'tcpdf/examples/gen_pdf_zam.php';
 
 
-$email_11='m.grzegrzolka@op.pl';
-
+$email_11=$emailclient;
+//echo $email_11;
 if (file_exists(dirname(__FILE__).'/tcpdf/examples/files/' . $fileName)) {
         if (!empty($email_11)) {
 			
-            //$status = sendReceiptEmail($fileName, $email_11);
-			echo 2;
-            return $status;   
+            $status = sendCompanyEmail($fileName, $email_11,$confromcust ,$email_permissions);
+			echo  $status;
+            //return $status;   
         } else {
 			
             return false;
@@ -69,10 +37,10 @@ if (file_exists(dirname(__FILE__).'/tcpdf/examples/files/' . $fileName)) {
 
 
 
-function sendReceiptEmail($fileName, $mailto)
+function sendReceiptEmail($fileName, $mailto, $email_permissions)
 {
     $file = dirname(__FILE__).'/tcpdf/examples/files/' . $fileName;
-    date_default_timezone_set('Asia/Kolkata');
+    date_default_timezone_set('Europe/Berlin');
 	$mail = new PHPMailer(true);
 
 
@@ -87,6 +55,7 @@ function sendReceiptEmail($fileName, $mailto)
     $mail->IsSMTP();
     $mail->Host = "alarm-concept.pl";
     $mail->Port = 587;
+	$mail->CharSet = "UTF-8";
     $mail->SMTPAuth = true;
 	$mail->SMTPOptions = array(
                     'ssl' => array(
@@ -95,13 +64,22 @@ function sendReceiptEmail($fileName, $mailto)
                         'allow_self_signed' => true
                     )
                 );
-    $mail->Username = "konfigurator_test@alarm-concept.pl";
-    $mail->Password = "<password>";
-    $mail->setFrom('konfigurator@alarm-concept.pl', 'Company Quote');
+    $mail->Username = $email_permissions['username'];
+    $mail->Password = $email_permissions['password'];
+    $mail->setFrom('konfigurator@alarm-concept.pl', 'Alarm-Concept.pl');
     //$mail->addReplyTo('info@xxx.com');
     $mail->addAddress($mailto);
-    $mail->Subject = 'Quote';
-    $mail->Body = 'Here we attached quote detail.Please find the attachment.';
+    $mail->Subject = 'Twoja konfiguracja systemu alarmowego.';
+    $mail->Body = 'Szanowny kliencie,
+
+Jest nam niezmiernie miło wiedząc, że skorzystałeś z naszego kalkulatora w celu przygotowania dla Ciebie propozycji instalacji alarmu.
+W załączniku dostałeś wyliczenia według Twoich założeń.
+Przejrzyj spokojnie przygotowane zestawienie a w razie niejasności skontaktuj się z nami, chętnie wszystko wyjaśnimy.
+
+Z wyrazami szacunku zespół Alarm – Concept.
+
+ 
+Informacje zawarte w przedstawionej propozycji nie są prawnie wiążące i nie stanowią oferty handlowej, w tym w rozumieniu art. 66 par.1 Kodeksu Cywilnego.';
 
     $mail->addAttachment($file);
 	
@@ -113,6 +91,57 @@ function sendReceiptEmail($fileName, $mailto)
         if (file_exists($file)) {
             unlink($file);
         }
+        return true;
+    }
+	
+}
+function sendCompanyEmail($fileName, $mailto,$confromcust , $email_permissions)
+{
+    $file = dirname(__FILE__).'/tcpdf/examples/files/' . $fileName;
+    date_default_timezone_set('Europe/Berlin');
+	$mail = new PHPMailer(true);
+
+
+    //require __DIR__.'/../libraries/phpmailer/PHPMailerAutoload.php';
+
+    $mail = new PHPMailer;
+	
+    //$mail->SMTPDebug =  SMTP::DEBUG_SERVER;  
+	$mail->SMTPDebug =  0;  
+    $mail->Debugoutput = 'html';
+	
+    $mail->IsSMTP();
+    $mail->Host = "alarm-concept.pl";
+    $mail->Port = 587;
+	$mail->CharSet = "UTF-8";
+    $mail->SMTPAuth = true;
+	$mail->SMTPOptions = array(
+                    'ssl' => array(
+                        'verify_peer' => false,
+                        'verify_peer_name' => false,
+                        'allow_self_signed' => true
+                    )
+                );
+    $mail->Username = $email_permissions['username'];
+    $mail->Password = $email_permissions['password'];
+    $mail->setFrom('konfigurator@alarm-concept.pl', 'Alarm-Concept.pl');
+    //$mail->addReplyTo('info@xxx.com');
+    $mail->addAddress('m.grzegrzolka@op.pl');
+    $mail->Subject = 'Konfigurator - zgłoszenie.';
+    $mail->Body = 'Wiadomość generowana automatycznie.<br/><br/><br/>
+	Imię/nazwa     :  '.$confromcust["clientname"].'<br/>
+	Miejscowość    :  '.$confromcust["localisation"].'<br/>
+	Telefon		   :  '.$confromcust["phonenumber"].'<br/>
+	Adres email	   :  '.$confromcust["emailclient"].'<br/>
+	Wartość brutto :  '.$confromcust["val_sum"].'zł brutto<br/>';
+
+    $mail->addAttachment($file);
+	
+    //send the message, check for errors
+    if (!$mail->send()) {
+        return false;
+    } else {
+        sendReceiptEmail($fileName, $mailto , $email_permissions);
         return true;
     }
 	

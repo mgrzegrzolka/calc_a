@@ -294,6 +294,7 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 
 <div>
 <div class="alert alert-warning warning-email" style="display:none;"><strong>Uwaga!</strong> Wprowadziłeś błędny adres email.</div>
+<div class="alert alert-warning warning-phone" style="display:none;"><strong>Uwaga!</strong> Wprowadziłeś błędny numer telefonu.</div>
 	<div class="row" >
 		<div class="col-md-6" style="margin-bottom: 10px;">
 			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Imię</label>-->
@@ -309,7 +310,7 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 		
 		<div class="col-md-6" style="margin-bottom: 10px;">
 			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Email</label>-->
-			<input type="email" class="form-control23" id="emailclient" placeholder="Adres emailowy" style="">
+			<input type="email1" class="form-control23" id="emailclient" placeholder="Adres emailowy" style="">
 		</div>
 		<div class="col-md-6" style="margin-bottom: 10px;">
 			<!--<label for="exampleInputEmail1" style="font-size: 2rem;margin-bottom: .5rem;">Telefon</label>-->
@@ -321,12 +322,18 @@ echo '<div class="blog-header-wrap"><div class="blog-header-content-wrap"><h1 cl
 			<input type="checkbox" class="form-check-input" id="exampleCheck1">
 		</div>
 		<div class="col-md-11">
-			<label class="form-check-label" for="Check1" id="agre1" style="text-align: left;"><small id="emailHelp" class="form-text text-muted" style="color: #575757;">Wyrażam zgodę na przetwarzanie moich danych osobowych w postaci imienia, nazwiska, firmy, nr telefonu kontaktowego dla potrzeb prowadzenia marketingu bezpośredniego z wykorzystaniem połączeń telefonicznych przez Konsalnet Holding S.A. zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016r.</small></label>
+			<label class="form-check-label" for="Check1" id="agre1" style="text-align: left;"><small id="emailHelp" class="form-text text-muted" style="color: #575757;">Wyrażam zgodę na przetwarzanie moich danych osobowych w postaci imienia, nazwiska, firmy, nr telefonu kontaktowego dla potrzeb prowadzenia marketingu bezpośredniego z wykorzystaniem połączeń telefonicznych przez Alarm-Concept zgodnie z Rozporządzeniem Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia 2016r.</small></label>
 		</div>
   </div>
  
-  <button onclick="sendFormCalc()" class="btn22" >Wyślij konfigurację</button>
-
+  <button id="send_config_button" onclick="sendFormCalc()" class="btn22" >Wyślij konfigurację</button>
+	<div  style="margin-top: 10px;width:260px;margin-left:auto;margin-right:auto;text-align:left;" >
+	<ul style="font-size:10px;">
+		<li class="accept" id="check_el_sys">Wybierz elementy swojego systemu.</li>
+		<li class="accept" id="check_source_contact">Wprowadź email lub(i) numer telefomu.</li>
+		<li class="accept" id="check_agree">Zaakceptuj zgodę na przetwarzanie danych.</li>
+	</ul>
+	</div>
 </div>
 
 

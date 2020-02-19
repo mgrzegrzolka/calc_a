@@ -11,6 +11,7 @@ $el_panic = $_POST['el_panic'];
 $el_pirout = $_POST['el_pirout'];
 $vat = (int)$_POST['vat'];
 $app = (int)$_POST['f_app'];
+$bezprz = (int)$_POST['f_bezprz'];
 
 $emailclient 	= $_POST['emailclient'];
 $phonenumber 	= $_POST['phonenumber'];
@@ -18,6 +19,17 @@ $clientname 	= $_POST['clientname'];
 $localisation 	= $_POST['localisation'];
 $agre1			= $_POST['agre1'];
 
+if($vat==8){
+	$vat=1.08 ;
+}else{
+	$vat=1.23;
+}
+
+if($app == 1){
+	$val_catral = 1200;
+}else{
+	$val_catral = 800;
+}
 
 $val_keypad = (int)$el_keypad * 350;
 $val_pir = (int)$el_pir * 		55;
